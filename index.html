@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn thi CNXHKH | Ngoc.dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">Ngoc<span>.dev</span></div>
+        <div class="course-name">Chủ nghĩa xã hội khoa học</div>
+    </header>
+
+    <main class="container">
+        <!-- Màn hình thiết lập -->
+        <section id="setup-screen" class="card active">
+            <h2>Bắt đầu ôn tập</h2>
+            <p>Hệ thống trắc nghiệm 200 câu hỏi chuẩn theo giáo trình.</p>
+            
+            <div class="form-group">
+                <label for="chapter-select">Chọn phần ôn tập:</label>
+                <select id="chapter-select">
+                    <option value="all">Toàn bộ 200 câu (Trộn ngẫu nhiên)</option>
+                    <!-- Các option chương sẽ được render bằng JS -->
+                </select>
+            </div>
+            
+            <button id="start-btn" class="btn btn-primary">Bắt đầu làm bài</button>
+        </section>
+
+        <!-- Màn hình làm bài -->
+        <section id="quiz-screen" class="card hidden">
+            <div class="quiz-header">
+                <div class="progress-text">Câu <span id="current-q-num">1</span> / <span id="total-q-num">200</span></div>
+                <div class="score-text">Điểm: <span id="score-display">0</span></div>
+            </div>
+            
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+
+            <h3 id="question-text" class="question">Đang tải câu hỏi...</h3>
+            
+            <div id="options-container" class="options-grid">
+                <!-- Các nút đáp án sẽ được render tại đây -->
+            </div>
+
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn btn-secondary hidden">Câu tiếp theo &rarr;</button>
+            </div>
+        </section>
+
+        <!-- Màn hình kết quả -->
+        <section id="result-screen" class="card hidden">
+            <h2>Hoàn thành bài tập!</h2>
+            <div class="score-circle">
+                <span id="final-score">0</span>/<span id="final-total">0</span>
+            </div>
+            <p id="feedback-msg" class="feedback"></p>
+            <button id="restart-btn" class="btn btn-primary">Làm lại từ đầu</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
