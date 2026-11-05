@@ -4,64 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ôn thi CNXHKH | Ngoc.dev</title>
+    <!-- Font hiện đại Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="app-header">
-        <div class="logo">Ngoc<span>.dev</span></div>
-        <div class="course-name">Chủ nghĩa xã hội khoa học</div>
-    </header>
+    <!-- Background trang trí -->
+    <div class="bg-shapes"></div>
 
-    <main class="container">
-        <!-- Màn hình thiết lập -->
-        <section id="setup-screen" class="card active">
-            <h2>Bắt đầu ôn tập</h2>
-            <p>Hệ thống trắc nghiệm 200 câu hỏi chuẩn theo giáo trình.</p>
-            
-            <div class="form-group">
-                <label for="chapter-select">Chọn phần ôn tập:</label>
-                <select id="chapter-select">
-                    <option value="all">Toàn bộ 200 câu (Trộn ngẫu nhiên)</option>
-                    <!-- Các option chương sẽ được render bằng JS -->
-                </select>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-code"></i> Ngoc<span>.dev</span>
             </div>
-            
-            <button id="start-btn" class="btn btn-primary">Bắt đầu làm bài</button>
-        </section>
+            <div class="course-badge">
+                <i class="fa-solid fa-graduation-cap"></i> CNXHKH
+            </div>
+        </header>
 
-        <!-- Màn hình làm bài -->
-        <section id="quiz-screen" class="card hidden">
-            <div class="quiz-header">
-                <div class="progress-text">Câu <span id="current-q-num">1</span> / <span id="total-q-num">200</span></div>
-                <div class="score-text">Điểm: <span id="score-display">0</span></div>
-            </div>
-            
-            <div class="progress-bar">
-                <div id="progress-fill"></div>
-            </div>
+        <main class="main-content">
+            <!-- MÀN HÌNH SETUP -->
+            <section id="setup-screen" class="glass-card active">
+                <div class="icon-wrapper"><i class="fa-solid fa-book-open-reader"></i></div>
+                <h2 class="title">Hệ thống Trắc nghiệm</h2>
+                <p class="subtitle">Khởi động hành trình ôn thi với ngân hàng 200 câu hỏi chuẩn đầu ra.</p>
+                
+                <div class="form-group">
+                    <label for="chapter-select"><i class="fa-solid fa-layer-group"></i> Chọn phạm vi ôn tập:</label>
+                    <div class="select-wrapper">
+                        <select id="chapter-select">
+                            <option value="all">🔥 Toàn bộ 200 câu (Trộn ngẫu nhiên)</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-icon"></i>
+                    </div>
+                </div>
+                
+                <button id="start-btn" class="btn btn-primary btn-glow">
+                    <span>Bắt đầu làm bài</span> <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </button>
+            </section>
 
-            <h3 id="question-text" class="question">Đang tải câu hỏi...</h3>
-            
-            <div id="options-container" class="options-grid">
-                <!-- Các nút đáp án sẽ được render tại đây -->
-            </div>
+            <!-- MÀN HÌNH LÀM BÀI -->
+            <section id="quiz-screen" class="glass-card hidden">
+                <div class="quiz-top-bar">
+                    <div class="question-tracker">
+                        <span class="label">Câu hỏi</span>
+                        <span class="numbers"><strong id="current-q-num">1</strong> / <span id="total-q-num">200</span></span>
+                    </div>
+                    <div class="score-tracker">
+                        <i class="fa-solid fa-trophy"></i> Điểm: <strong id="score-display">0</strong>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div id="progress-fill"></div>
+                </div>
 
-            <div class="quiz-footer">
-                <button id="next-btn" class="btn btn-secondary hidden">Câu tiếp theo &rarr;</button>
-            </div>
-        </section>
+                <div class="question-container">
+                    <h3 id="question-text">Đang tải câu hỏi...</h3>
+                </div>
+                
+                <div id="options-container" class="options-grid">
+                    <!-- Nút đáp án render từ JS -->
+                </div>
 
-        <!-- Màn hình kết quả -->
-        <section id="result-screen" class="card hidden">
-            <h2>Hoàn thành bài tập!</h2>
-            <div class="score-circle">
-                <span id="final-score">0</span>/<span id="final-total">0</span>
-            </div>
-            <p id="feedback-msg" class="feedback"></p>
-            <button id="restart-btn" class="btn btn-primary">Làm lại từ đầu</button>
-        </section>
-    </main>
+                <div class="quiz-footer">
+                    <button id="next-btn" class="btn btn-next hidden">
+                        Tiếp theo <i class="fa-solid fa-angle-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- MÀN HÌNH KẾT QUẢ -->
+            <section id="result-screen" class="glass-card hidden">
+                <div class="icon-wrapper trophy-icon"><i class="fa-solid fa-medal"></i></div>
+                <h2 class="title">Hoàn thành bài thi!</h2>
+                
+                <div class="score-display-wrapper">
+                    <div class="score-circle">
+                        <div class="score-content">
+                            <span id="final-score" class="score-big">0</span>
+                            <span class="score-divider">/</span>
+                            <span id="final-total" class="score-small">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p id="feedback-msg" class="feedback-msg"></p>
+                
+                <button id="restart-btn" class="btn btn-primary btn-glow">
+                    <i class="fa-solid fa-rotate-right"></i> Làm lại từ đầu
+                </button>
+            </section>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>

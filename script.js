@@ -1,10 +1,8 @@
-// State management
 let quizData = [];
 let currentQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 
-// DOM Elements
 const setupScreen = document.getElementById('setup-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const resultScreen = document.getElementById('result-screen');
@@ -14,7 +12,6 @@ const nextBtn = document.getElementById('next-btn');
 const restartBtn = document.getElementById('restart-btn');
 const optionsContainer = document.getElementById('options-container');
 
-// Load Data
 async function loadQuizData() {
     try {
         const response = await fetch('Data_assignment.json');
@@ -23,7 +20,7 @@ async function loadQuizData() {
         populateChapterSelect();
     } catch (error) {
         console.error("Lỗi tải dữ liệu JSON:", error);
-        document.querySelector('#setup-screen p').innerText = "Không thể tải dữ liệu. Hãy đảm bảo chạy ứng dụng trên local server (Live Server).";
+        document.querySelector('.subtitle').innerText = "❌ Lỗi: Không thể đọc file Data_assignment.json. Vui lòng chạy qua Live Server.";
     }
 }
 
@@ -36,7 +33,6 @@ function populateChapterSelect() {
     });
 }
 
-// Xáo trộn mảng (Fisher-Yates)
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -45,7 +41,6 @@ function shuffleArray(array) {
     return array;
 }
 
-// Khởi tạo bài thi
 startBtn.addEventListener('click', () => {
     const selectedValue = chapterSelect.value;
     currentQuestions = [];
@@ -58,7 +53,7 @@ startBtn.addEventListener('click', () => {
         currentQuestions = [...quizData[selectedValue].questions];
     }
 
-    currentQuestions = shuffleArray(currentQuestions); // Trộn ngẫu nhiên câu hỏi
+    currentQuestions = shuffleArray(currentQuestions);
     currentQuestionIndex = 0;
     score = 0;
 
@@ -73,15 +68,21 @@ function loadQuestion() {
     
     document.getElementById('current-q-num').innerText = currentQuestionIndex + 1;
     document.getElementById('score-display').innerText = score;
-    document.getElementById('question-text').innerText = currentQ.question_text;
     
-    // Cập nhật thanh tiến trình
+    // Xóa chữ "Câu X:" ở đầu câu hỏi nếu có để UI sạch sẽ hơn
+    let cleanQuestionText = currentQ.question_text.replace(/^Câu \d+[:.]\s*/i, '');
+    document.getElementById('question-text').innerText = cleanQuestionText;
+    
     const progressPercent = ((currentQuestionIndex) / currentQuestions.length) * 100;
     document.getElementById('progress-fill').style.width = `${progressPercent}%`;
 
     currentQ.options.forEach((optionText, index) => {
         const button = document.createElement('button');
-        button.innerText = optionText;
+        
+        // Dọn dẹp các tiền tố "a.", "b.", "c.", "d.", "A.", "B." từ file JSON
+        let cleanText = optionText.replace(/^[a-d]\s*[.)]\s*/i, '');
+        button.innerText = cleanText;
+        
         button.classList.add('option-btn');
         button.addEventListener('click', () => selectAnswer(button, index, currentQ.correct_answer_index));
         optionsContainer.appendChild(button);
@@ -105,7 +106,6 @@ function selectAnswer(selectedBtn, selectedIndex, correctIndex) {
         selectedBtn.classList.add('wrong');
     }
 
-    // Hiển thị đáp án đúng và disable các nút
     Array.from(optionsContainer.children).forEach((btn, index) => {
         btn.disabled = true;
         if (index === correctIndex) {
@@ -132,9 +132,10 @@ function showResults() {
     
     const percent = (score / currentQuestions.length) * 100;
     let feedback = "";
-    if (percent >= 80) feedback = "Tuyệt vời! Kiến thức của bạn rất vững.";
-    else if (percent >= 50) feedback = "Khá tốt! Nhưng cần ôn tập thêm một chút nhé.";
-    else feedback = "Đừng nản chí! Hãy ôn lại lý thuyết kỹ hơn.";
+    if (percent >= 90) feedback = "🏆 Xuất sắc! Kiến thức của bạn cực kỳ vững vàng.";
+    else if (percent >= 70) feedback = "👏 Rất tốt! Bạn đã nắm chắc phần lớn giáo trình.";
+    else if (percent >= 50) feedback = "👍 Khá ổn! Nhưng cần ôn tập kỹ thêm vài chương nhé.";
+    else feedback = "📚 Đừng nản chí! Hãy đọc lại tài liệu và làm lại nào.";
     
     document.getElementById('feedback-msg').innerText = feedback;
     switchScreen(quizScreen, resultScreen);
@@ -146,10 +147,12 @@ restartBtn.addEventListener('click', () => {
 
 function switchScreen(hideScreen, showScreen) {
     hideScreen.classList.remove('active');
-    hideScreen.classList.add('hidden');
-    showScreen.classList.remove('hidden');
-    showScreen.classList.add('active');
+    setTimeout(() => {
+        hideScreen.classList.add('hidden');
+        showScreen.classList.remove('hidden');
+        showScreen.classList.add('active');
+    }, 300); // Khớp với thời gian animation CSS
 }
 
-// Init
+// Khởi chạy khi load trang
 loadQuizData();
