@@ -1,0 +1,41 @@
+name: Deploy CNXHKH Quiz to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  # Cho phép kích hoạt workflow thủ công từ tab Actions
+  workflow_dispatch:
+
+# Thiết lập quyền cần thiết để deploy lên GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Đảm bảo chỉ có 1 tiến trình deploy chạy tại một thời điểm
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Chỉ định đường dẫn chứa các file HTML, CSS, JS (dấu . mặc định là thư mục gốc)
+          path: '.'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
