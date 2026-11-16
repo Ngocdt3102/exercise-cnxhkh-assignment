@@ -194,7 +194,7 @@
                         "c. Họ không đại diện cho phương thức sản xuất tiên tiến",
                         "d. Cả a và b"
                     ],
-                    "correct_answer_index": 2
+                    "correct_answer_index": 3
                 },
                 {
                     "question_id": 18,
@@ -216,7 +216,7 @@
                         "c. Cả a,b đều sai",
                         "d. Cả a, b đều đúng"
                     ],
-                    "correct_answer_index": 3
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 20,
@@ -227,7 +227,7 @@
                         "c. Giải phóng mình đồng thời giải phóng toàn xã hội vĩnh viễn thoát khỏi áp bức, bóc lột, bất công, xây dựng CNCS",
                         "d. Trở thành giai cấp thống trị."
                     ],
-                    "correct_answer_index": 1
+                    "correct_answer_index": 2
                 },
                 {
                     "question_id": 21,
@@ -249,7 +249,7 @@
                         "c. Là giai cấp có số lượng đông đảo nhất",
                         "d. Là giai cấp có tinh thần đấu tranh chống áp bức"
                     ],
-                    "correct_answer_index": 2
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 23,
@@ -293,7 +293,7 @@
                         "c. Do sự phát triển của lực lượng sản xuất hiện đại",
                         "d. Cả a, b và c"
                     ],
-                    "correct_answer_index": 2
+                    "correct_answer_index": 0
                 },
                 {
                     "question_id": 27,
@@ -304,7 +304,7 @@
                         "c. Là giai cấp cùng khổ nhất trong xã hội",
                         "d. Là giai cấp thực hiện xoá bỏ mọi chế độ tư hữu"
                     ],
-                    "correct_answer_index": 1
+                    "correct_answer_index": 3
                 },
                 {
                     "question_id": 28,
@@ -348,7 +348,7 @@
                         "c. Chủ nghĩa hiện sinh",
                         "d. Hệ tư tưởng phong kiến"
                     ],
-                    "correct_answer_index": 0
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 32,
@@ -359,7 +359,7 @@
                         "c. Là sự nghiệp cách mạng của quần chúng và mang lại lợi ích cho thiểu số",
                         "d. Là sự nghiệp cách mạng của quần chúng và mang lại lợi ích cho đông đảo quần chúng"
                     ],
-                    "correct_answer_index": 2
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 33,
@@ -370,7 +370,7 @@
                         "c. Nền đại công nghiệp tư bản chủ nghĩa",
                         "d. Cả A, B, C đều sai"
                     ],
-                    "correct_answer_index": 3
+                    "correct_answer_index": 2
                 },
                 {
                     "question_id": 34,
@@ -381,7 +381,7 @@
                         "c. Xóa bỏ chế độ tư bản chủ nghĩa, xây dựng chủ nghĩa xã hội, chủ nghĩa cộng sản",
                         "d. Cả A, B, C đều sai"
                     ],
-                    "correct_answer_index": 1
+                    "correct_answer_index": 2
                 },
                 {
                     "question_id": 35,
@@ -392,7 +392,7 @@
                         "c. Manh mún",
                         "d. Cả A, B, C"
                     ],
-                    "correct_answer_index": 1
+                    "correct_answer_index": 0
                 },
                 {
                     "question_id": 36,
@@ -403,7 +403,7 @@
                         "c. Phát triển văn hoá-xã hội",
                         "d. Phát triển giáo dục-đào tạo"
                     ],
-                    "correct_answer_index": 2
+                    "correct_answer_index": 0
                 },
                 {
                     "question_id": 37,
@@ -414,7 +414,7 @@
                         "c. Giai cấp địa chủ phong kiến",
                         "d. Giai cấp tư sản"
                     ],
-                    "correct_answer_index": 2
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 38,
@@ -436,7 +436,7 @@
                         "c. Người bị bóc lột và lạc hậu",
                         "d. Người lao động và người làm thuê"
                     ],
-                    "correct_answer_index": 0
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 40,
@@ -451,7 +451,7 @@
                 },
                 {
                     "question_id": 41,
-                    "question_text": "Câu 26: Giai cấp nào đại diện cho dân tộc?",
+                    "question_text": "Giai cấp nào đại diện cho dân tộc?",
                     "options": [
                         "a. Giai cấp thống trị trong quốc gia",
                         "b. Giai cấp đông đảo nhất trong quốc gia",
@@ -462,14 +462,14 @@
                 },
                 {
                     "question_id": 42,
-                    "question_text": "Câu 27: Tính hai mặt của người nông dân là gì?",
+                    "question_text": "Tính hai mặt của người nông dân là gì?",
                     "options": [
                         "a. Người tư hữu và người bóc lột",
                         "b. Người lao động và tư hữu nhỏ",
                         "c. Người bị bóc lột và lạc hậu",
                         "d. Người lao động và người làm thuê"
                     ],
-                    "correct_answer_index": 0
+                    "correct_answer_index": 1
                 }
             ]
         },
@@ -496,7 +496,7 @@
                         "c. Chủ nghĩa cộng sản.",
                         "d. Cả a, b, c."
                     ],
-                    "correct_answer_index": 0
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 45,
@@ -903,7 +903,7 @@
                         "c. Thiết lập được chính quyền dân chủ nhân dân",
                         "d. Các phương án nêu ra đều đúng"
                     ],
-                    "correct_answer_index": 0
+                    "correct_answer_index": 3
                 },
                 {
                     "question_id": 82,
@@ -963,7 +963,7 @@
                         "c. Nền dân chủ phong kiến",
                         "d.Nền dân chủ TBCN"
                     ],
-                    "correct_answer_index": 1
+                    "correct_answer_index": 2
                 },
                 {
                     "question_id": 87,
@@ -1342,7 +1342,7 @@
                         "c. Văn hoá",
                         "d. Tư tưởng"
                     ],
-                    "correct_answer_index": 0
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 121,
@@ -1457,7 +1457,7 @@
                         "c. 13%",
                         "d.17%"
                     ],
-                    "correct_answer_index": 1
+                    "correct_answer_index": 2
                 },
                 {
                     "question_id": 131,
@@ -1490,7 +1490,7 @@
                         "c. Phát triển kinh tế hàng hoá ở các vùng dân tộc thiểu số",
                         "d. Tăng cường bồi dưỡng, đào tạo đội ngũ cán bộ là người dân tộc thiểu số"
                     ],
-                    "correct_answer_index": 3
+                    "correct_answer_index": 2
                 },
                 {
                     "question_id": 134,
@@ -1600,7 +1600,7 @@
                         "c.Tín ngưỡng - tôn giáo",
                         "d.Tôn giáo - tín ngưỡng"
                     ],
-                    "correct_answer_index": 2
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 144,
@@ -1798,7 +1798,7 @@
                         "c. Tôn giáo là thứ thuốc hiệu nghiệm chữa mọi đau khổ",
                         "d. Tôn giáo làm người ta u mê, nghiện ngập"
                     ],
-                    "correct_answer_index": 3
+                    "correct_answer_index": 1
                 },
                 {
                     "question_id": 162,
@@ -2007,7 +2007,7 @@
                         "c. Nâng cao trình độ văn hoá cho quần chúng nhân dân",
                         "d. Nâng cao trình độ dân trí cho nhân dân"
                     ],
-                    "correct_answer_index": 3
+                    "correct_answer_index": 2
                 }
             ]
         },
@@ -2045,7 +2045,7 @@
                         "c. Nhà nước xã hội chủ nghĩa ban hành và thực hiện luật Hôn nhân và nâng cao trình độ văn hoá và dân trí cho mọi người dân",
                         "d. Cả a, b và c"
                     ],
-                    "correct_answer_index": 0
+                    "correct_answer_index": 3
                 },
                 {
                     "question_id": 184,
